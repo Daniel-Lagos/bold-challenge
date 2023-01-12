@@ -1,0 +1,32 @@
+@import '../../themes/color.scss';
+
+.header-container {
+  background: $clr-blue;
+  background: linear-gradient(90deg, $clr-blue 50%, $clr-red 100%);
+  height: 90px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.navigation {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: space-between;
+  padding: 0 1rem;
+
+  @media screen and (min-width: 600px) {
+    padding: 0 3rem;
+  }
+}
+
+.action-content {
+  display: flex;
+  gap: 8px;
+}
+
+.link {
+  color: white;
+  text-decoration: none;
+}
