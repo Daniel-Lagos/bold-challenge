@@ -9,6 +9,7 @@ const Home = () => {
       <Container>
         <Statistics />
         <Table />
+        <br/>
       </Container>
     </Layout>
   );

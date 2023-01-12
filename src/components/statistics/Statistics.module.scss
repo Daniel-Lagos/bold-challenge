@@ -63,6 +63,8 @@
 .filter-content {
   display: flex;
   flex-direction: row-reverse;
+  position: relative;
+  width: 100%;
 }
 
 .time-button {
@@ -94,4 +96,36 @@
 .price {
   font-size: 40px;
   color: $clr-blue;
+}
+
+.dialog {
+  border: none;
+  border-radius: 8px;
+  top: 0;
+  left: 0;
+  position: absolute;
+  padding: 1rem;
+  width: 300px;
+}
+
+.dialog-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.submit {
+  border-radius: 16px;
+  background-color: $clr-red;
+  border: none;
+  color: white;
+  margin: 0 auto;
+  padding: 0.2rem 2rem;
+  cursor: pointer;
+}
+
+.input-content {
+  display: flex;
+  color: $clr-blue;
+  font-weight: 700;
+  gap: 8px;
 }
