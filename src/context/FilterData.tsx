@@ -40,23 +40,20 @@ export const FilterDataProvider: FunctionComponent<FilterDataProviderProps> = ({
   children,
 }) => {
   const [filteredData, setFilteredData] = useState<any[]>(data.sales);
-  const [filters, setFilters] = useState<Filters>({
-    timeFilter: 'MONTH',
-    typePayment: ['ALL']
-  });
+  const [filters, setFilters] = useState<Filters>(
+    JSON.parse(localStorage.getItem('filters') || '{}'),
+  );
 
   useEffect(() => {
     const filtersSaved = JSON.parse(localStorage.getItem('filters') || '{}');
     if (filtersSaved) {
-      setFilteredData(filtersSaved);
+      setFilters(filtersSaved);
     }
   }, []);
 
   useEffect(() => {
     localStorage.setItem('filters', JSON.stringify(filters));
-    const value =filterData(filters, data.sales)
-    //console.log(value)
-    setFilteredData(value);
+    setFilteredData(filterData(filters, data.sales));
   }, [filters]);
 
   return (
