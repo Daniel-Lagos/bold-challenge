@@ -1,6 +1,10 @@
+import { useFilterDataContext } from '../../context/FilterData';
+import { formatDate, formatPrice } from '../../utils/formats';
 import styles from './Table.module.scss';
 
 const Table = () => {
+  const { filteredData } = useFilterDataContext();
+  console.log(filteredData);
   return (
     <div className={styles['table-container']}>
       <header className={styles.header}>
@@ -18,27 +22,19 @@ const Table = () => {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Cobro Exitoso</td>
-              <td>04/06/2022</td>
-              <td>**** **** **** 7711</td>
-              <td>FD87SDF87G876GFG</td>
-              <td>$250000</td>
-            </tr>
-            <tr>
-              <td>Cobro Exitoso</td>
-              <td>04/06/2022</td>
-              <td>**** **** **** 7711</td>
-              <td>FD87SDF87G876GFG</td>
-              <td>$250000</td>
-            </tr>
-            <tr>
-              <td>Cobro Exitoso</td>
-              <td>04/06/2022</td>
-              <td>**** **** **** 7711</td>
-              <td>FD87SDF87G876GFG</td>
-              <td>$250000</td>
-            </tr>
+            {filteredData.map((transaction) => (
+              <tr key={transaction.IDTransaction}>
+                <td>
+                  {transaction.transactionStatus === 'SUCCESS'
+                    ? 'Cobro exitoso'
+                    : 'Cobro no realizado'}
+                </td>
+                <td>{formatDate(transaction.date)}</td>
+                <td>{transaction.payMethod}</td>
+                <td>{transaction.IDTransaction}</td>
+                <td>{formatPrice().format(transaction.amount)}</td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>

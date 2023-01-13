@@ -1,0 +1,84 @@
+{
+  "sales": [
+    {
+      "typePayment": "LINK",
+      "transactionStatus": "SUCCESS",
+      "date": "Fri, 20 Jan 2023 04:23:24 GMT",
+      "payMethod": "**** **** **** 6401",
+      "IDTransaction": "rt5yic7ium82fnksd9vgkz",
+      "amount": 89344
+    },
+    {
+      "typePayment": "LINK",
+      "transactionStatus": "SUCCESS",
+      "date": "Fri, 10 Feb 2023 04:23:24 GMT",
+      "payMethod": "**** **** **** 5099",
+      "IDTransaction": "cx84swjvck6z3e9pkjpjxi",
+      "amount": 83896
+    },
+    {
+      "typePayment": "LINK",
+      "transactionStatus": "SUCCESS",
+      "date": "Tue, 24 Jan 2023 04:23:24 GMT",
+      "payMethod": "**** **** **** 8754",
+      "IDTransaction": "b1k3hcac90cf867vmcquc",
+      "amount": 99301
+    },
+    {
+      "typePayment": "LINK",
+      "transactionStatus": "SUCCESS",
+      "date": "Sat, 14 Jan 2023 04:23:24 GMT",
+      "payMethod": "**** **** **** 2535",
+      "IDTransaction": "m11a4srwxbsyqxekeptq8n",
+      "amount": 87855
+    },
+    {
+      "typePayment": "LINK",
+      "transactionStatus": "SUCCESS",
+      "date": "Mon, 06 Feb 2023 04:23:24 GMT",
+      "payMethod": "**** **** **** 2624",
+      "IDTransaction": "knu4rzrbnaerw8gbxifn9",
+      "amount": 54158
+    },
+    {
+      "typePayment": "LINK",
+      "transactionStatus": "SUCCESS",
+      "date": "Tue, 17 Jan 2023 04:23:24 GMT",
+      "payMethod": "**** **** **** 4338",
+      "IDTransaction": "v29s51ymf3la0ebekbk0h",
+      "amount": 2464
+    },
+    {
+      "typePayment": "LINK",
+      "transactionStatus": "SUCCESS",
+      "date": "Wed, 18 Jan 2023 04:23:24 GMT",
+      "payMethod": "**** **** **** 6222",
+      "IDTransaction": "y3cdwtwfqmjlk12jln37cl",
+      "amount": 94838
+    },
+    {
+      "typePayment": "LINK",
+      "transactionStatus": "SUCCESS",
+      "date": "Mon, 06 Feb 2023 04:23:24 GMT",
+      "payMethod": "**** **** **** 9104",
+      "IDTransaction": "w02fyugq0llnmz0mjiiut",
+      "amount": 38904
+    },
+    {
+      "typePayment": "LINK",
+      "transactionStatus": "SUCCESS",
+      "date": "Mon, 16 Jan 2023 04:23:24 GMT",
+      "payMethod": "**** **** **** 6308",
+      "IDTransaction": "yn8tl13tujn5r5z9z2ps7w",
+      "amount": 13881
+    },
+    {
+      "typePayment": "LINK",
+      "transactionStatus": "SUCCESS",
+      "date": "Thu, 26 Jan 2023 04:23:24 GMT",
+      "payMethod": "**** **** **** 5864",
+      "IDTransaction": "g3gzy6nu23au8wsbtyis6i",
+      "amount": 12395
+    }
+  ]
+}
