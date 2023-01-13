@@ -4,7 +4,6 @@ import styles from './Table.module.scss';
 
 const Table = () => {
   const { filteredData } = useFilterDataContext();
-  console.log(filteredData);
   return (
     <div className={styles['table-container']}>
       <header className={styles.header}>
