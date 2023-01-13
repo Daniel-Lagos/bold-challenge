@@ -1,12 +1,12 @@
 import Layout from "../layouts/Layout";
 
 
-const MyBussines = () => {
+const MyBusiness = () => {
   return (
     <Layout>
-      <p>My Bussiness</p>
+      <p>My Business</p>
     </Layout>
   );
 };
 
-export default MyBussines;
+export default MyBusiness;

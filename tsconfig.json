@@ -22,6 +22,6 @@
       "@bold/layouts/*": ["layouts/*"],
     }
   },
-  "include": ["src",".eslintrc.json"],
+  "include": [".eslintrc.json"],
   "references": [{ "path": "./tsconfig.node.json" }],
 }

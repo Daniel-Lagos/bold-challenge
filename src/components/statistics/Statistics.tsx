@@ -1,9 +1,13 @@
 import { useState } from 'react';
 import { useFilterDataContext } from '../../context/FilterData';
+import { MdOutlineHelpOutline } from 'react-icons/md';
+import { MdOutlineClose } from 'react-icons/md';
+import { MdFilterList } from 'react-icons/md';
 import styles from './Statistics.module.scss';
+import { formatPrice } from '../../utils/formats';
 
 const Statistics = () => {
-  const { filters, setFilters } = useFilterDataContext();
+  const { filters, setFilters, filteredData } = useFilterDataContext();
   const [typePayment, setTypePayment] = useState<
     Array<'LINK' | 'DATAPHONE' | 'ALL'>
   >(filters?.typePayment || []);
@@ -30,16 +34,46 @@ const Statistics = () => {
     setOpen(false);
   };
 
+  const month = [
+    'Enero',
+    'Febrero',
+    'Marzo',
+    'Abril',
+    'Mayo',
+    'Junio',
+    'Julio',
+    'Agosto',
+    'Septiembre',
+    'Octubre',
+    'Noviembre',
+    'Deciembre',
+  ];
+  const getTimeLabel = (time: 'DAY' | 'WEEK' | 'MONTH' | '') => {
+    const today = new Date();
+    switch (time) {
+      case 'DAY':
+        return 'hoy';
+      case 'WEEK':
+        return 'esta semana';
+      default:
+        return month[today.getMonth()];
+    }
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.card}>
         <header className={styles.header}>
-          <h4> Total de ventas de septiembre</h4>
-          <p>icon</p>
+          <h4> Total de ventas de {getTimeLabel(filters?.timeFilter || '')}</h4>
+          <MdOutlineHelpOutline />
         </header>
         <div className={styles.content}>
-          <h2 className={styles.price}>$1560.000</h2>
-          <p>Septiembre 21</p>
+          <h2 className={styles.price}>
+            {formatPrice().format(
+              filteredData.reduce((acc, cu) => acc + cu.amount, 0),
+            )}
+          </h2>
+          <p>{getTimeLabel(filters?.timeFilter || '')}, 2023</p>
         </div>
       </div>
 
@@ -61,7 +95,7 @@ const Statistics = () => {
             className={styles['time-button']}
             onClick={() => handleTime('MONTH')}
           >
-            Septiembre
+            {month[new Date().getMonth()]}
           </button>
         </div>
         <div className={styles['filter-content']}>
@@ -70,11 +104,15 @@ const Statistics = () => {
             onClick={() => setOpen(true)}
           >
             filtrar
+            <MdFilterList />
           </button>
           <dialog open={open} className={styles['dialog']}>
             <div className={styles['dialog-header']}>
               <p>FILTRAR</p>
-              <p onClick={() => setOpen(false)}>X</p>
+              <MdOutlineClose
+                style={{ cursor: 'pointer' }}
+                onClick={() => setOpen(false)}
+              />
             </div>
             <form>
               <div className={styles['input-content']}>
