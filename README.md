@@ -7,7 +7,6 @@
   |- env
   |- layouts
   |- pages
-  |- server
   |- themes
   |- context
   |- utils
